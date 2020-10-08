@@ -26,7 +26,6 @@ import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView txt_head;
     ArrayList<String> listSt = new ArrayList<>();
     ArrayAdapter<String> listAdapter;
     List<JSONData> listData = new ArrayList<>();
@@ -39,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycle_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        txt_head = (TextView) findViewById(R.id.head_text);
         init();
     }
 

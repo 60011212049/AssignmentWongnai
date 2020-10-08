@@ -1,7 +1,9 @@
 package com.example.assignmentwongnai;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +12,13 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.larvalabs.svgandroid.SVG;
+import com.larvalabs.svgandroid.SVGParser;
 import com.squareup.picasso.Picasso;
 
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.List;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.CustomViewHolder> {
@@ -35,7 +42,8 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         final JSONData jsonData = listData.get(i);
 
         //Render image using Picasso library
-        if (!TextUtils.isEmpty(jsonData.getIconUrl()) && jsonData.getIconType() != "vector") {
+        if (TextUtils.isEmpty(jsonData.getIconUrl()) != true && jsonData.getIconType() != "vector") {
+            Log.d("TAG", "onBindViewHolder: "+jsonData.getIconType()+" "+i);
             Picasso.with(context).load(jsonData.getIconUrl())
                     .into(customViewHolder.iconUrl, new com.squareup.picasso.Callback() {
                         @Override
@@ -49,21 +57,22 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
                     });
         }
         else {
+            Log.d("TAG", "onCCCCC: "+jsonData.getIconUrl());
 //            try {
 //
-//
-//                final URL url = new URL("http://upload.wikimedia.org/wikipedia/commons/e/e8/Svg_example3.svg");
-//                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-//                InputStream inputStream = urlConnection.getInputStream();
-//                SVG svg = SVGParser.getSVGFromInputStream(inputStream);
-//                Drawable drawable = svg.createPictureDrawable();
-//                return drawable;
+////                URL url = new URL(jsonData.getIconUrl().toString());
+////                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+////                InputStream inputStream = urlConnection.getInputStream();
+////                SVG svg = SVGParser.getSVGFromInputStream(inputStream);
+////                Drawable drawable = svg.createPictureDrawable();
+////                customViewHolder.iconUrl.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+////                customViewHolder.iconUrl.setImageDrawable(drawable);
 //            } catch (Exception e) {
 //                Log.e("MainActivity", e.getMessage(), e);
 //            }
 
         }
-        customViewHolder.iconUrl.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+
         //Setting text view title
         customViewHolder.name.setText(jsonData.name);
         customViewHolder.description.setText(jsonData.description);
