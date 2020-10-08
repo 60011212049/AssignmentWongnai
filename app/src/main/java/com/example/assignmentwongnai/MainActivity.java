@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         JSONData jsonData = new  JSONData();
                         jsonData.setIconUrl(dataObj.getString("iconUrl"));
                         jsonData.setName(dataObj.getString("name"));
+                        jsonData.setIconType(dataObj.getString("iconType"));
                         jsonData.setDescription(Html.fromHtml(dataObj.getString("description")).toString());
                         listData.add(jsonData);
 //                        String strFormHtml = Html.fromHtml(dataObj.getString("description")).toString();

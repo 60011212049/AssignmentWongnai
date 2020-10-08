@@ -5,6 +5,16 @@ public class JSONData {
     String iconUrl;
     String description;
 
+    public String getIconType() {
+        return iconType;
+    }
+
+    public void setIconType(String iconType) {
+        this.iconType = iconType;
+    }
+
+    String iconType;
+
     public String getName() {
         return name;
     }

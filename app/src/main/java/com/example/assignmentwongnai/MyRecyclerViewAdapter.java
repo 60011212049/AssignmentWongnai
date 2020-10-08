@@ -35,13 +35,35 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         final JSONData jsonData = listData.get(i);
 
         //Render image using Picasso library
-        if (!TextUtils.isEmpty(jsonData.getIconUrl())) {
+        if (!TextUtils.isEmpty(jsonData.getIconUrl()) && jsonData.getIconType() != "vector") {
             Picasso.with(context).load(jsonData.getIconUrl())
-                    .error(R.drawable.ic_launcher_background)
-                    .placeholder(R.drawable.ic_launcher_background)
-                    .into(customViewHolder.iconUrl);
-        }
+                    .into(customViewHolder.iconUrl, new com.squareup.picasso.Callback() {
+                        @Override
+                        public void onSuccess() {
+                        }
 
+                        @Override
+                        public void onError() {
+
+                        }
+                    });
+        }
+        else {
+//            try {
+//
+//
+//                final URL url = new URL("http://upload.wikimedia.org/wikipedia/commons/e/e8/Svg_example3.svg");
+//                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+//                InputStream inputStream = urlConnection.getInputStream();
+//                SVG svg = SVGParser.getSVGFromInputStream(inputStream);
+//                Drawable drawable = svg.createPictureDrawable();
+//                return drawable;
+//            } catch (Exception e) {
+//                Log.e("MainActivity", e.getMessage(), e);
+//            }
+
+        }
+        customViewHolder.iconUrl.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         //Setting text view title
         customViewHolder.name.setText(jsonData.name);
         customViewHolder.description.setText(jsonData.description);
