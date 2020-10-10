@@ -5,7 +5,14 @@
       <config>
         <device id="Nexus 5X" />
         <device id="Nexus 7 2013" />
-        <device id="pixel_xl" />
+        <device id="pixel_c" />
+        <device id="Nexus 6" />
+        <device id="pixel" />
+        <device id="Nexus 10" />
+        <device id="pixel_3" />
+        <device id="pixel_3_xl" />
+        <device id="Nexus 7" />
+        <device id="Nexus 6P" />
       </config>
     </shared>
   </component>
@@ -14,8 +21,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0562f9dd-3a2f-4ddf-a977-594abf6ec695" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____app_libs_svg_android_1_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/svg-android-1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_pixplicity_sharp_library_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_3_10_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_1_14_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/assignmentwongnai/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -31,8 +41,6 @@
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
@@ -40,8 +48,6 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/assignmentwongnai/MyRecyclerViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/assignmentwongnai/MyRecyclerViewAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/card_list_row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/card_list_row.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,10 +89,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/libs" />
+    <property name="project.structure.last.edited" value="Suggestions" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
+  <component name="PsdUISettings">
+    <option name="MODULE_TAB" value="Default Config" />
+  </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\AndriodStudio\AssignmentWongnai\app\src\main\res\drawable" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\AndriodStudio\AssignmentWongnai\app\libs" />
     </key>
@@ -165,10 +180,19 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="837" y="292" key="#com.intellij.ide.util.MemberChooser" timestamp="1602144049449">
-      <screen x="0" y="0" width="2048" height="1152" />
+    <state x="477" y="252" key="#PSD" timestamp="1602267555373">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="477" y="252" key="#PSD/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602267555373" />
+    <state x="785" y="264" key="#com.intellij.ide.util.MemberChooser" timestamp="1602265896406">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="837" y="292" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1152@0.0.2048.1152" timestamp="1602144049449" />
+    <state x="785" y="264" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602265896406" />
+    <state x="690" y="267" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1602217884534">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602217884534" />
     <state x="612" y="338" key="AndroidCreateResourceFileDialog" timestamp="1602130804301">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
@@ -177,26 +201,30 @@
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
     <state x="887" y="348" key="AndroidProcessChooserDialog/0.0.2048.1152@0.0.2048.1152" timestamp="1602130326279" />
-    <state width="938" height="281" key="GridCell.Tab.0.bottom" timestamp="1602169936059">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1602268435773">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602268435773" />
+    <state width="1223" height="421" key="GridCell.Tab.0.bottom" timestamp="1602312649575">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="2006" height="404" key="GridCell.Tab.0.bottom/0.0.2048.1152@0.0.2048.1152" timestamp="1602148644049" />
-    <state width="938" height="281" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602169936059" />
-    <state width="938" height="281" key="GridCell.Tab.0.center" timestamp="1602169936059">
+    <state width="1223" height="421" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602312649575" />
+    <state width="1223" height="421" key="GridCell.Tab.0.center" timestamp="1602312649575">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="2006" height="404" key="GridCell.Tab.0.center/0.0.2048.1152@0.0.2048.1152" timestamp="1602148644049" />
-    <state width="938" height="281" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602169936059" />
-    <state width="938" height="281" key="GridCell.Tab.0.left" timestamp="1602169936059">
+    <state width="1223" height="421" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602312649575" />
+    <state width="1223" height="421" key="GridCell.Tab.0.left" timestamp="1602312649575">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="2006" height="404" key="GridCell.Tab.0.left/0.0.2048.1152@0.0.2048.1152" timestamp="1602148644048" />
-    <state width="938" height="281" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602169936059" />
-    <state width="938" height="281" key="GridCell.Tab.0.right" timestamp="1602169936059">
+    <state width="1223" height="421" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602312649575" />
+    <state width="1223" height="421" key="GridCell.Tab.0.right" timestamp="1602312649575">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="2006" height="404" key="GridCell.Tab.0.right/0.0.2048.1152@0.0.2048.1152" timestamp="1602148644049" />
-    <state width="938" height="281" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602169936059" />
+    <state width="1223" height="421" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602312649575" />
     <state width="2006" height="404" key="GridCell.Tab.1.bottom" timestamp="1602148644051">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>

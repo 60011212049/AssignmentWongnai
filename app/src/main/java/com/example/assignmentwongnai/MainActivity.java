@@ -7,9 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -26,11 +25,10 @@ import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<String> listSt = new ArrayList<>();
-    ArrayAdapter<String> listAdapter;
     List<JSONData> listData = new ArrayList<>();
     MyRecyclerViewAdapter adapter;
     RecyclerView mRecyclerView;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycle_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
         init();
     }
 
     public void init() {
-        Log.d("TAG", "init: start link");
         AsyncHttpClient client = new AsyncHttpClient();
         client.get("https://api.coinranking.com/v1/public/coins", new AsyncHttpResponseHandler() {
             @Override
@@ -51,39 +49,30 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     result = new String(response, "UTF-8");
                     JSONObject obj = new JSONObject(result);
-                    Log.d("TAG", "JSONArray : " + obj.length());
                     JSONObject dataArray = obj.getJSONObject("data");
-                    Log.d("TAG", "JSONArrayData : " + dataArray.length());
                     JSONArray coinsArray = dataArray.getJSONArray("coins");
-                    Log.d("TAG", "JSONArrayCoins : " + coinsArray.length());
                     for (int i = 0; i < coinsArray.length(); i++) {
                         JSONObject dataObj = coinsArray.getJSONObject(i);
-                        JSONData jsonData = new  JSONData();
+                        JSONData jsonData = new JSONData();
                         jsonData.setIconUrl(dataObj.getString("iconUrl"));
                         jsonData.setName(dataObj.getString("name"));
                         jsonData.setIconType(dataObj.getString("iconType"));
                         jsonData.setDescription(Html.fromHtml(dataObj.getString("description")).toString());
                         listData.add(jsonData);
-//                        String strFormHtml = Html.fromHtml(dataObj.getString("description")).toString();
-//                        listSt.add(strFormHtml);
                     }
-                    Log.d("TAG", "Data in list ::: "+listData.size());
-                    adapter = new MyRecyclerViewAdapter(MainActivity.this,listData);
+                    adapter = new MyRecyclerViewAdapter(MainActivity.this, listData);
                     mRecyclerView.setAdapter(adapter);
-//                    listAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_item, listSt);
+                    progressBar.setVisibility(View.INVISIBLE);
 
                 } catch (UnsupportedEncodingException | JSONException e) {
                     e.printStackTrace();
                 }
-
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] errorResponse, Throwable e) {
                 Log.d("TAG", "onFailure: " + statusCode);
             }
-
         });
-
     }
 }
