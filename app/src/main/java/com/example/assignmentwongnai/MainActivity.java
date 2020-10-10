@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         init();
     }
 
+    //ดึงข้อมูลจาก api
     public void init() {
         AsyncHttpClient client = new AsyncHttpClient();
         client.get("https://api.coinranking.com/v1/public/coins", new AsyncHttpResponseHandler() {
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                         jsonData.setDescription(Html.fromHtml(dataObj.getString("description")).toString());
                         listData.add(jsonData);
                     }
+                    //นำข้อมูล coins ที่ได้ไปเซ็ตแสดงผลในคลาส MyRecyclerViewAdapter
                     adapter = new MyRecyclerViewAdapter(MainActivity.this, listData);
                     mRecyclerView.setAdapter(adapter);
                     progressBar.setVisibility(View.INVISIBLE);

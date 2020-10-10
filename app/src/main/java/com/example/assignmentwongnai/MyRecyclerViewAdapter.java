@@ -1,21 +1,13 @@
 package com.example.assignmentwongnai;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.squareup.picasso.Picasso;
 import java.util.List;
 
@@ -35,12 +27,13 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         return viewHolder;
     }
 
+    //เซ็ตค่าข้อมูลที่จะแสดง
     @Override
     public void onBindViewHolder(CustomViewHolder customViewHolder, int i) {
         final JSONData jsonData = listData.get(i);
 
-        //Render image using Picasso library
-        if (TextUtils.isEmpty(jsonData.getIconUrl()) != true && jsonData.getIconType().equals("pixel")) {
+        //เช็คว่าข้อมูลที่ได้มีไหม แล้วก็เช็ค type ของ icon
+        if (!jsonData.getIconUrl().isEmpty() && jsonData.getIconType().equals("pixel")) {
             if (!jsonData.getIconUrl().contains(".svg")) {
                 Picasso.with(context).load(jsonData.getIconUrl())
                         .into(customViewHolder.iconUrl);
@@ -48,7 +41,8 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
                 Utils.fetchSvg(context, jsonData.getIconUrl(), customViewHolder.iconUrl);
             }
 
-        } else if (!jsonData.getIconUrl().isEmpty() && jsonData.getIconType().contains("vector")) {
+        } //ส่วนไอคอนที่ type เป็น vector ต้องนำค่าที่ได้ไปแปลงที่คลาส Utils เป็น library ที่หามา
+        else if (!jsonData.getIconUrl().isEmpty() && jsonData.getIconType().contains("vector")) {
             Utils.fetchSvg(context, jsonData.getIconUrl(), customViewHolder.iconUrl);
         }
         customViewHolder.name.setText(jsonData.name);
@@ -74,26 +68,4 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             this.progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
         }
     }
-//    class LoadSVG extends AsyncTask<String, Void, Drawable> {
-//
-//        @Override
-//        protected Drawable doInBackground(String... strings) {
-//            try {
-//                final URL url = new URL("https://cdn.coinranking.com/bOabBYkcX/bitcoin_btc.svg");
-//                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-//                InputStream inputStream = urlConnection.getInputStream();
-//                SVG svg = SVGParser. getSVGFromInputStream(inputStream);
-//                Drawable drawable = svg.createPictureDrawable();
-//                return drawable;
-//            } catch (Exception e) {
-//                Log.e("MainActivity", e.getMessage(), e);
-//            }
-//            return null;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(Drawable drawable) {
-//            super.onPostExecute(drawable);
-//        }
-//    }
 }
